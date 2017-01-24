@@ -9,14 +9,14 @@ The server listens on port 5000 and expects a message of the following format:
 `message length` is a byte long and does not include the byte used for `message length` (i.e. it is the number of bytes for `message`, so `3abc` is an acceptable message)
 
 The server will respond with a single byte (ASCII encoded character) after receiving a message:
-`y` to indicate the ciphertext is valid.
-`n` to indicate the ciphertext is invalid.
+- `y` to indicate the ciphertext is valid.
+- `n` to indicate the ciphertext is invalid.
 
 To shutdown the server, simply send the following 5 byte message (ascii encoding for the letters):
 `4exit`
 
 
-The secret message is located in `attack/msg.txt` and has the following format:
+The secret message is located in `msg.txt` and has the following format:
 ```
 [iv][ciphertext]
 ```
